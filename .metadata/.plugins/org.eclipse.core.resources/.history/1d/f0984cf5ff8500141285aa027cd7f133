@@ -1,0 +1,10 @@
+package uy.com.rest.db.interfaces;
+
+
+public interface GenericDao {
+	
+	<T> T find(Object obj);
+		
+	<T> void create(T obj);
+
+}

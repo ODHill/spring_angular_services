@@ -1,0 +1,5 @@
+package uy.com.rest.db.interfaces;
+
+public interface GenericDao {
+
+}

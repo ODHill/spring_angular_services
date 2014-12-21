@@ -1,0 +1,3 @@
+INDEX VERSION 1.3+/home/dhill/Workspaces/Answer/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+1919408001.index
+2501256536.index

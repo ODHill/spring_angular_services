@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"  
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"> 
+
+<h:head>
+	<title>Answer login</title>
+</h:head> 
+<body>
+	<h:form name="usernamePasswordLoginForm" method="post" > <!--  action="j_spring_security_check 
+		<h:outputText value ="Usuario" />		
+		<h:inputText id="j_username" required="true" />
+		<h:outputText value ="Password" />
+		<h:inputSecret id="j_password" required="true" />
+		<h:commandButton value="Ingresar" /> "-->
+		<h:outputLabel value="Usuario:" style="font-weight:bold"/> 
+		<p:inputText value ="#{mainController.userName}" />			
+		<br></br>
+		<h:outputLabel value="Valor del parametro:" style="font-weight:bold"/> 
+		<p:inputText value ="#{mainController.param}" />
+	
+	</h:form>
+</body> 
+</html>

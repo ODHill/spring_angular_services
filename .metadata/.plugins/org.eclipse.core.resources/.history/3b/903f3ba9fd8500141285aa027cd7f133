@@ -1,0 +1,8 @@
+package uy.com.rest.impl;
+
+import uy.com.rest.db.impl.DaoImpl;
+
+public class DaoImplDos extends DaoImpl{
+
+
+}
