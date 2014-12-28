@@ -1,24 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="personApp">
 <head>
 <title>Person Manager</title>
 <script	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
 	<!-- script src="http://code.angularjs.org/1.2.0-rc.3/angular.min.js"></script-->
 	<script type="text/javascript" src="./js/app.js"></script>	
 </head>
-<body ng-app="personApp">
+<body >
 	<div ng-controller="taskManagerController">
 		<div id="task-panel" class="fadein fadeout showpanel panel" ng-show="toggle">
 			<div class="panel-heading">
 				<i class="panel-title-icon fa fa-tasks"></i> <span
 					class="panel-title">Recent Tasks</span>
 				<div class="panel-heading-controls">
-				<input type="date" name="bday" min="2000-01-02">
-					<button ng-click="toggle = !toggle">Add New Task</button>
-					<button confirmed-click="archiveTasks()"
+					<input type="text" name="searchID" value= "{{ searchValue}}">
+					<button ng-click="toggle = !toggle">Search</button>
+					<button confirmed-click="searchPerson()"
 						ng-confirm-click="Would you like to archive completed tasks?">Clear	completed tasks</button>
 				</div>
 			</div>
+		</div>
+	</div>		
+		<!-- 
 			<div>
 				<div ng-repeat="task in tasks">
 					<span> {{task.taskPriority}} </span>
@@ -85,5 +88,6 @@
 			</div>
 		</div>
 	</div>
+	 -->
 </body>
 </html>

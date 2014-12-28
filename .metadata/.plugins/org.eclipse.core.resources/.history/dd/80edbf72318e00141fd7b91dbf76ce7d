@@ -1,0 +1,12 @@
+package com.dhill.controller;
+
+import java.io.Serializable;
+
+public class PersonController implements Serializable{
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -25595180939938054L;	
+
+}

@@ -13,6 +13,8 @@ import uy.com.rest.db.interfaces.PersonDao;
 import uy.com.rest.interfaces.PersonService;
 
 import com.dhill.model.Person;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Service
 @Path("person")
@@ -47,6 +49,23 @@ public class PersonServiceImpl implements PersonService, Serializable{
 	public List<Person> find() {
 		// TODO Auto-generated method stub
 		return new ArrayList<Person>();
+	}
+
+	public List<Person> getAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public String findByID(String id) {
+		ObjectMapper mapper = new ObjectMapper();
+		try {
+			return mapper.writeValueAsString(personDao.find(Long.parseLong(id)));
+		} catch (JsonProcessingException e) {
+			e.printStackTrace();
+		}	
+		
+		return "Not Found";
+		 		
 	}
 
 }

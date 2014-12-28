@@ -56,4 +56,9 @@ public class Person implements Serializable{
 	public void setBirthDate(Calendar birthDate) {
 		this.birthDate = birthDate;
 	}
+	
+	@Override
+	public String toString() {
+		return "id: " + id + " name: " + name + " surname: " + surname;
+	}
 }
