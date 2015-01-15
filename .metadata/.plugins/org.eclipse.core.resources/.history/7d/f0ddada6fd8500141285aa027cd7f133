@@ -1,9 +1,0 @@
-package uy.com.rest.impl;
-
-import uy.com.rest.impl.GenericDao;
-
-import com.dhill.model.Person;
-
-public class DaoImpl extends GenericDao<Person>{
-
-}

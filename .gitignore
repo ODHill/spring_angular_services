@@ -1,0 +1,15 @@
+# IDE files #
+#############
+nbproject
+.~lock.*
+.buildpath
+.idea
+.project
+.settings
+composer.lock
+.classpath
+
+#Ignore these directories
+.metadata
+RemoteSystemsTempFiles
+target

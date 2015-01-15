@@ -1,2 +1,11 @@
 1419723677182	Rename package 'controller'
 1419728570367	Rename type 'MainController'
+1419733174616	Rename type 'PersonService'
+1419808313631	Move 1 resources to 'views'
+1419808576956	Rename resource 'main.html'
+1419810489866	Move 1 resources to 'WEB-INF'
+1419810495143	Delete element
+1419810512118	Rename resource 'main.jsp'
+1419810679869	Move 1 resources to 'webapp'
+1419810685299	Delete element
+1419810690858	Rename resource 'main.htm'

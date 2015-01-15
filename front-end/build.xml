@@ -1,15 +1,14 @@
-<project name="Answer-appweb" default="copywar" basedir=".">
+<project name="frontPerson" default="copywar" basedir=".">
 
 	<!--=========================================================================
-				SYSOne Insurance Suite
-				Helper for answer-appweb  - Version 0.1
+				Helper for frontPerson  - Version 0.1
 	==========================================================================-->
 
 	<property name="dist.dir" value="target" />
 	<property name="tomcat.home" value="/home/dhill/opt/tomcat7" />
 	<property name="deploy.dir" value="${tomcat.home}/webapps" />
-	<property name="website.name" value="answer.war" />
-	<property name="websitedir.name" value="answer" />
+	<property name="website.name" value="frontPerson.war" />
+	<property name="websitedir.name" value="frontPerson" />
 
 	<!-- Undeploys the web site from tomcat -->
 	<target name="copywar" depends="">
