@@ -8,7 +8,7 @@ personManagerModule.controller('personManagerController', function ($scope,$http
  // toggle selection for a given task by task id
    $scope.personSelection = function () {
 	   
-    	 $http({method: 'GET', url: 'person/' + $scope.id}).
+    	 $http({method: 'GET', url: 'mvc-angularjs/person/' + $scope.id}).
     	 success(function(data) {
     		 alert('Task unmarked');
     		 $scope.person = data;         

@@ -30,7 +30,7 @@ public class PersonController implements Serializable{
 	@RequestMapping(value="/{id}",method = RequestMethod.GET)	
 	public Person getPersonById(@PathVariable String id){
 		System.out.println("HAsta aca llegue --> id="+ id );
-		return personService.getPersonbyID("3");
+		return personService.getPersonbyID(id);
 	}
 	
 	@RequestMapping("hello")

@@ -7,14 +7,14 @@
 
   <display-name>frontPerson</display-name>
   <servlet>
-    <servlet-name>MVC AngularJs</servlet-name>
+    <servlet-name>mvc-angularjs</servlet-name>
     <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
     <load-on-startup>1</load-on-startup>
   </servlet>
   
   <servlet-mapping>
-    <servlet-name>MVC AngularJs</servlet-name>
-    <url-pattern>/</url-pattern>    
+    <servlet-name>mvc-angularjs</servlet-name>
+    <url-pattern>/mvc-angularjs/*</url-pattern>    
   </servlet-mapping>
   
   <welcome-file-list>
