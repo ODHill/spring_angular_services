@@ -1,5 +1,6 @@
 package uy.com.rest.impl;
 
+import java.io.IOException;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,8 +14,11 @@ import uy.com.rest.db.interfaces.PersonDao;
 import uy.com.rest.interfaces.PersonService;
 
 import com.dhill.model.Person;
+import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.type.TypeFactory;
 
 @Service
 @Path("person")
@@ -28,10 +32,19 @@ public class PersonServiceImpl implements PersonService, Serializable{
 	@Autowired
 	private PersonDao personDao;
 
-	public void create(String name, String surname) {
-		Person person = new Person();
-		person.setName(name);
-		person.setSurname(surname);
+	//TODO return message to client
+	public void create(String data) {
+		ObjectMapper mapper = new ObjectMapper();
+		Person person = null;
+		try {
+			person = mapper.readValue(data, Person.class);
+		} catch (JsonParseException e) {
+			e.printStackTrace();
+		} catch (JsonMappingException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}		
 		personDao.create(person);		
 	}
 
@@ -51,8 +64,14 @@ public class PersonServiceImpl implements PersonService, Serializable{
 		return new ArrayList<Person>();
 	}
 
-	public List<Person> getAll() {
-		// TODO Auto-generated method stub
+	public String getAll() {
+		ObjectMapper mapper = new ObjectMapper();
+		try {			
+			return mapper.writerWithType(TypeFactory.defaultInstance().constructCollectionType(List.class, Person.class))
+					.writeValueAsString(personDao.getAll());
+		} catch (Exception e) {
+			
+		}
 		return null;
 	}
 

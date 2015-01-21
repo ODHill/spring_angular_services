@@ -8,16 +8,24 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="person")
+@NamedQueries({
+	@NamedQuery(name = "getAllPerson", query = "SELECT p FROM Person p")
+})
 public class Person implements Serializable{
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = -5178972320369366415L;
+	
+	public static final String GET_ALL_PERSON = "getAllPerson";
+	
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)

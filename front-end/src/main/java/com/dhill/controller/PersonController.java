@@ -1,14 +1,16 @@
 package com.dhill.controller;
 
 import java.io.Serializable;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.dhill.model.Person;
@@ -23,22 +25,32 @@ public class PersonController implements Serializable{
 	 */
 	private static final long serialVersionUID = -25595180939938054L;	
 	
+	private static final Logger logger = Logger.getLogger(PersonController.class.getName());
+	
 	@Autowired
 	@Qualifier(value="personsrv")
 	private PersonService personService;
 
 	@RequestMapping(value="/{id}",method = RequestMethod.GET)	
 	public Person getPersonById(@PathVariable String id){
-		System.out.println("HAsta aca llegue --> id="+ id );
+		logger.log(Level.INFO, "Id Value --> "+ id );
 		return personService.getPersonbyID(id);
+	}		
+	
+	@RequestMapping(value="/",method = RequestMethod.GET)	
+	public List<Person> getAllPersons(){
+		logger.log(Level.INFO,"Getting all persons");
+		return personService.getAllPersons();
 	}
 	
-	@RequestMapping("hello")
-	 public String hello(@RequestParam(value="name", required=false, defaultValue="World") String name, Model model) {
-		model.addAttribute("name", name);
-		return "helloworld";
-	 }
+	@RequestMapping(value="/",method = RequestMethod.POST)	
+	public void createPerson(@RequestBody String data) {
+		logger.log(Level.INFO,"Saving person :" + data);
+		personService.createPerson(data);
+	}
 	
-
-
+	public void updatePerson() {
+		
+	}
+	
 }

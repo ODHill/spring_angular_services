@@ -18,9 +18,9 @@ import com.dhill.model.Person;
 public interface PersonService {
 	
 	@POST
-	@Consumes(MediaType.APPLICATION_XML)
-	@Path("{name}/{surname}")
-	public void create(@PathParam("name")String name,@PathParam("surname") String surname);
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Path("/")
+	public void create(String data);
 	
 	@PUT
 	public void update();
@@ -29,8 +29,8 @@ public interface PersonService {
 	public void remove();
 	
 	@GET
-	@Consumes(MediaType.APPLICATION_XML)
-	public List<Person> getAll();
+	@Consumes(MediaType.APPLICATION_JSON)
+	public String getAll();
 	
 	
 	@GET

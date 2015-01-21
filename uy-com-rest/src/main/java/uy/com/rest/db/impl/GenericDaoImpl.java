@@ -2,6 +2,7 @@ package uy.com.rest.db.impl;
 
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
+import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -11,7 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 import uy.com.rest.db.interfaces.GenericDao;
 
 
-public class GenericDaoImpl<T> implements GenericDao<T>{
+public abstract class GenericDaoImpl<T> implements GenericDao<T>{
 	
 	@PersistenceContext
 	protected EntityManager em;
@@ -41,6 +42,5 @@ public class GenericDaoImpl<T> implements GenericDao<T>{
 	public void create(T obj) {
 		em.persist(obj);
 	}
-	
 
 }
